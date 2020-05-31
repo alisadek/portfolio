@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.7da9297e.chunk.css",
+    "main.css": "/portfolio/static/css/main.4ef647c5.chunk.css",
     "main.js": "/portfolio/static/js/main.387d207d.chunk.js",
     "main.js.map": "/portfolio/static/js/main.387d207d.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.fb1b3dac.js",
@@ -9,10 +9,10 @@
     "static/js/2.6ebbed75.chunk.js": "/portfolio/static/js/2.6ebbed75.chunk.js",
     "static/js/2.6ebbed75.chunk.js.map": "/portfolio/static/js/2.6ebbed75.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "precache-manifest.422621bfd75b5c99f3ddafbd50dc8645.js": "/portfolio/precache-manifest.422621bfd75b5c99f3ddafbd50dc8645.js",
+    "precache-manifest.6aa34aed4d55cddc9b9f9a21538781bf.js": "/portfolio/precache-manifest.6aa34aed4d55cddc9b9f9a21538781bf.js",
     "service-worker.js": "/portfolio/service-worker.js",
     "static/css/2.e4346227.chunk.css.map": "/portfolio/static/css/2.e4346227.chunk.css.map",
-    "static/css/main.7da9297e.chunk.css.map": "/portfolio/static/css/main.7da9297e.chunk.css.map",
+    "static/css/main.4ef647c5.chunk.css.map": "/portfolio/static/css/main.4ef647c5.chunk.css.map",
     "static/js/2.6ebbed75.chunk.js.LICENSE.txt": "/portfolio/static/js/2.6ebbed75.chunk.js.LICENSE.txt",
     "static/media/Ali Face.png": "/portfolio/static/media/Ali Face.d2dfd99e.png",
     "static/media/Software Engineer CV Design-01.svg": "/portfolio/static/media/Software Engineer CV Design-01.baac890a.svg",
@@ -22,7 +22,7 @@
     "static/js/runtime-main.fb1b3dac.js",
     "static/css/2.e4346227.chunk.css",
     "static/js/2.6ebbed75.chunk.js",
-    "static/css/main.7da9297e.chunk.css",
+    "static/css/main.4ef647c5.chunk.css",
     "static/js/main.387d207d.chunk.js"
   ]
 }
