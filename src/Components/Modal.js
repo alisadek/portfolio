@@ -1,45 +1,67 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { CSSTransition } from "react-transition-group";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Modal from '@material-ui/core/Modal';
+import CV from "../Assets/Software Engineer CV Design-01.svg"
 
-import Backdrop from "./Backdrop";
-import "./Modal.css";
+function rand() {
+  return Math.round(Math.random() * 20) - 10;
+}
 
-const ModalOverlay = (props) => {
-  const content = (
-    <div className={`modal ${props.className}`} style={props.style}>
-      <header className={`modal__header ${props.headerClass}`}>
-        <h2>{props.header}</h2>
-      </header>
-      <form>
-        <img
-          src="https://scontent-hbe1-1.xx.fbcdn.net/v/t31.0-8/12772044_10153228252755518_5671036087251677849_o.jpg?_nc_cat=100&_nc_sid=174925&_nc_eui2=AeFr8UnPonwkQ-Murx3PVQsXqFarCs03KueoVqsKzTcq53HVEq2J-gLr4UvlzlT5Mno&_nc_ohc=GI4tm0FunR8AX9aBysi&_nc_ht=scontent-hbe1-1.xx&oh=b5a1c49139b604c74a5c17b5523d6e8d&oe=5EF86A4D"
-          alt="Resume"
-        />
-        <footer className={`modal__footer ${props.footerClass}`}>
-          {props.footer}
-        </footer>
-      </form>
+function getModalStyle() {
+  const top = 50 + rand();
+  const left = 50 + rand();
+
+  return {
+    top: `${top}%`,
+    left: `${left}%`,
+    transform: `translate(-${top}%, -${left}%)`,
+  };
+}
+
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    position: 'absolute',
+    width: 400,
+    backgroundColor: theme.palette.background.paper,
+    border: '2px solid #000',
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
+}));
+
+export default function SimpleModal() {
+  const classes = useStyles();
+  // getModalStyle is not a pure function, we roll the style only on the first render
+  const [modalStyle] = React.useState(getModalStyle);
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const body = (
+    <div style={modalStyle} className={classes.paper}>
+      <h2 id="simple-modal-title">Resume</h2>
+      <img src= {CV} alt= "cv" />
+      <SimpleModal />
     </div>
   );
-  return ReactDOM.createPortal(content, document.getElementById("modal-hook"));
-};
 
-const Modal = (props) => {
   return (
-    <React.Fragment>
-      {props.show && <Backdrop onClick={props.onCancel} />}
-      <CSSTransition
-        in={props.show}
-        mountOnEnter
-        unmountOnExit
-        timeout={200}
-        classNames="modal"
-      >
-        <ModalOverlay {...props} />
-      </CSSTransition>
-    </React.Fragment>
-  );
-};
+    <div>
 
-export default Modal;
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+      >
+        {body}
+      </Modal>
+    </div>
+  );
+}
