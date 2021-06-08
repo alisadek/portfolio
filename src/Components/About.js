@@ -181,7 +181,7 @@ function About() {
         </Grid>
       </Container>
       {/* {My Info} */}
-
+      <Container>
       <Grid
         style={{ margin: "80px 0" }}
         container
@@ -190,7 +190,7 @@ function About() {
         justify="space-evenly"
         
       >
-        <Grid  item md={6} xs={12} className= {classes.paper}>
+        <Grid  item md={5} xs={12} className= {classes.paper}>
           <img style= {{maxWidth: "100%"}} src={Ali} alt="ali"/>
         </Grid>
         <Grid   item md={6} xs={12} className= {classes.paper}>
@@ -200,6 +200,7 @@ function About() {
           </Typography>
         </Grid>
       </Grid>
+      </Container>
     </div>
   );
 }

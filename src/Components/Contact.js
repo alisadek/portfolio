@@ -19,7 +19,53 @@ function Contact() {
       color: theme.palette.text.secondary,
     },
   }));
+
   const classes = useStyles();
+
+  // handleSubmit (event) {
+  //   event.preventDefault();
+  
+  //   const {
+  //     REACT_APP_EMAILJS_RECEIVER: receiverEmail,
+  //     REACT_APP_EMAILJS_TEMPLATEID: template,
+  //     REACT_APP_EMAILJS_USERID: user
+  //   } = this.props.env;
+
+  //   this.sendFeedback(
+  //     template,
+  //     this.props.senderEmail,
+  //     receiverEmail,
+  //     this.state.feedback,
+  //     user
+  //   );
+
+  //   this.setState({
+  //     formSubmitted: true
+  //   });
+  // }
+
+  // sendFeedback (templateId, senderEmail, receiverEmail, feedback, user) {
+  //   window.emailjs.send(
+  //     'default_service', // default email provider in your EmailJS account
+  //     templateId,
+  //     {
+  //       senderEmail,
+  //       receiverEmail,
+  //       feedback
+  //     },
+  //     user
+  //   )
+  //     .then(res => {
+  //       this.setState({ formEmailSent: true })
+  //     })
+  //     // Handle errors here however you like, or use a React error boundary
+  //     .catch(err => console.error('Failed to send feedback. Error: ', err))
+  // }
+  //  let service_id = "default_service";
+  //  let template_id = "template_Y01y1ugF";
+  //  emailjs.send(service_id, template_id, template_params);
+  // }
+
   return (
     <div
       className={classes.root}
@@ -50,11 +96,13 @@ function Contact() {
           Want to work together?
         </Typography>
         <form
-          style={{ marginTop: "50px" }}
-          align="center"
-          className={classes.root}
+          style={{ marginTop: "50px", display: "flex", flexDirection: "column", justifyContent: "center" , alignItems:"center"}}
+          
+          // align="center"
+          // className={classes.root}
           noValidate
           autoComplete="off"
+          // onSubmit = {handleSubmit}
         >
           <TextField
             style={{ width: "50%", minWidth: "300px" }}
@@ -63,7 +111,7 @@ function Contact() {
             variant="filled"
             InputLabelProps={{ style: { color: "#feceab" } }}
           />
-          <br />
+          
           <TextField
             style={{ width: "50%", minWidth: "300px" }}
             id="filled-basic"
@@ -71,7 +119,7 @@ function Contact() {
             variant="filled"
             InputLabelProps={{ style: { color: "#feceab" } }}
           />
-          <br />
+          
           <TextField
             style={{ width: "50%", minWidth: "300px" }}
             InputLabelProps={{ style: { color: "#feceab" } }}
@@ -81,11 +129,11 @@ function Contact() {
             rows={8}
             variant="filled"
           />
-          <br />
+          
           <Button
             variant="outlined"
             size="large"
-            style={{ margin: "20px", borderColor: "white", color: "white" }}
+            style={{ margin: "20px", borderColor: "white", color: "white", alignSelf: "center" }}
           >
             Submit
           </Button>
@@ -93,6 +141,6 @@ function Contact() {
       </Container>
     </div>
   );
-}
+        }
 
 export default Contact;
